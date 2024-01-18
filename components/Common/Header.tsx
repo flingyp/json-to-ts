@@ -11,12 +11,13 @@ export default function Header() {
           height={0}
           src="/logo.png"
           alt="Logo"
+          quality={100}
           className="scale-150"
         />
       </div>
       <div>
         <Link href="https://github.com/flingyp/json-to-ts" target="__blank">
-          <SvgIcon width={32} height={32} icon="Github" />
+          <SvgIcon width={24} height={24} icon="Github" />
         </Link>
       </div>
     </div>

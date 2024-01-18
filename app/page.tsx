@@ -1,6 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import JsonToTS from "json-to-ts";
+
 import Header from "~/components/Common/Header";
 import MonacoEditor from "~/components/MonacoEditor";
 
@@ -13,6 +15,19 @@ export default function Home() {
   const changeJsonCode = (code: string) => {
     setJsonCode(code);
   };
+
+  useEffect(() => {
+    try {
+      const resultStr = JsonToTS(JSON.parse(jsonCode), {
+        rootName: "Props",
+      });
+      const tsCode = resultStr.reduce((preStr, nextStr) => {
+        if (preStr === "") return nextStr;
+        return `${preStr}\n\n${nextStr}`;
+      }, "");
+      setTsCode(tsCode);
+    } catch (error) {}
+  }, [jsonCode]);
 
   const [tsCode, setTsCode] = useState("");
 
@@ -37,7 +52,7 @@ export default function Home() {
           width="50%"
           height="100%"
           value={tsCode}
-          language="ts"
+          language="typescript"
           options={{
             readOnly: true,
             readOnlyMessage: {
