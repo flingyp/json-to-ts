@@ -65,6 +65,7 @@ export default function Home() {
           height="100%"
           value={jsonCode}
           language="json"
+          loading="Loading..."
           onChange={(value) => changeJsonCode(value!)}
         />
         <MonacoEditor
@@ -72,6 +73,7 @@ export default function Home() {
           height="100%"
           value={tsCode}
           language="typescript"
+          loading="Loading..."
           options={{
             readOnly: true,
             readOnlyMessage: {
