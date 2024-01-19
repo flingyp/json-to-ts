@@ -9,11 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@flypeng/tool": "^5.5.1",
     "@monaco-editor/react": "^4.6.0",
     "json-to-ts": "^1.7.0",
     "next": "14.0.4",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-hot-toast": "^2.4.1"
   },
   "devDependencies": {
     "@types/node": "^20",
