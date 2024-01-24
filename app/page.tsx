@@ -26,7 +26,7 @@ export default function Home() {
       }
 
       const resultStr = JsonToTS(JSON.parse(jsonCode), {
-        rootName: "Props",
+        rootName: "DemoProps",
       });
       const tsCode = resultStr.reduce((preStr, nextStr) => {
         if (preStr === "") return nextStr;
